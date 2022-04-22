@@ -38,6 +38,8 @@ function Call() {
         <div className='local-player-wrapper'>
           <p className='local-player-text'>{localVideoTrack && `localTrack`}{joinState && localVideoTrack ? `(${client.uid})` : ''}</p>
           <MediaPlayer videoTrack={localVideoTrack} audioTrack={undefined}></MediaPlayer>
+          <button onClick={() => localAudioTrack?.setMuted(true)}>{'Mute'}</button>
+          <button onClick={() => localAudioTrack?.setMuted(false)}>{'unMute'}</button>
         </div>
         {remoteUsers.map(user => (<div className='remote-player-wrapper' key={user.uid}>
             <p className='remote-player-text'>{`remoteVideo(${user.uid})`}</p>
